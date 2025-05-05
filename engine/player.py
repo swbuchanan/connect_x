@@ -20,5 +20,8 @@ class RandomPlayer(Player):
 
     def get_move(self, board: Board):
         """Play a random move"""
-        valid_locs = [board.is_valid_location(col) for col in range(board.width)]
-        return random.choice(valid_locs)
+        valid_locs = [col for col in range(board.width) if board.is_valid_col(col)]
+        print(valid_locs)
+        choice = random.choice(valid_locs)
+        print(choice)
+        return choice

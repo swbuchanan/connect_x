@@ -25,7 +25,7 @@ class Game:
         self.board = Board(COLUMN_COUNT, ROW_COUNT)
         self.players = {
             1: HumanPlayer(1, RED),
-            2: HumanPlayer(2, YELLOW)
+            2: RandomPlayer(2, YELLOW)
         }
         self.current_turn = 0
         self.running = True
@@ -74,10 +74,10 @@ class Game:
 
                     # get player 2's move
                     move = self.players[2].get_move(self.board)
-                    if self.running and move and self.board.is_valid_col(move):
-                        row = self.board.get_next_open_row(col)
-                        self.board.drop_piece(row, col, 2)
-                        if self.board.is_winning_move(1):
+                    if self.running and self.board.is_valid_col(move):
+                        row = self.board.get_next_open_row(move)
+                        self.board.drop_piece(row, move, 2)
+                        if self.board.is_winning_move(2):
                             print("Player 2 wins")
                             # game_over = True
                             self.running = False

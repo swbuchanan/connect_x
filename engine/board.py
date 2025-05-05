@@ -59,7 +59,7 @@ class Board():
         for c in range(self.width):
             for r in range(self.height):
                 if self.board[r][c] == 1:
-                    pygame.draw.circle(screen, RED, (int(c*SQUARESIZE+SQUARESIZE/2), self.height*SQUARESIZE - int(r*SQUARESIZE + SQUARESIZE/2)), RADIUS)
+                    pygame.draw.circle(screen, RED, (int(c*SQUARESIZE+SQUARESIZE/2), self.height*SQUARESIZE - int((r-1)*SQUARESIZE + SQUARESIZE/2)), RADIUS)
                 elif self.board[r][c] == 2:
-                    pygame.draw.circle(screen, YELLOW, (int(c*SQUARESIZE+SQUARESIZE/2), self.height*SQUARESIZE - int(r*SQUARESIZE + SQUARESIZE/2)), RADIUS)
+                    pygame.draw.circle(screen, YELLOW, (int(c*SQUARESIZE+SQUARESIZE/2), self.height*SQUARESIZE - int((r-1)*SQUARESIZE + SQUARESIZE/2)), RADIUS)
         pygame.display.update()
