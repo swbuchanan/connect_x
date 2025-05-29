@@ -6,8 +6,8 @@ from player import HumanPlayer, RandomPlayer
 from constants import *
 
 # Game constants
-ROW_COUNT = 6
-COLUMN_COUNT = 7
+ROW_COUNT = 30
+COLUMN_COUNT = 40
 
 SCREENWIDTH = SQUARESIZE * COLUMN_COUNT
 SCREENHEIGHT = SQUARESIZE * (ROW_COUNT+1)
